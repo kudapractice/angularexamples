@@ -8,6 +8,45 @@
         <input type="text" class="form-control" placeholder="Super Tasy" ng-model="taco.name"></input>
       </div>
 
+      <div class="form-group">
+        <label for="filling">Select your filling</label>
+        <select ng-model="taco.filling" class="form-control" ng-options="f.id as f.name for f in fillings"> </select>
+      </div>
+
+      <div class="form-group">
+        <label>Extras</label>
+
+        <div class="checkbox" ng-repeat="extra in extras">
+          <label>
+            <input type="checkbox" ng-model="extra.checked"></input>
+            {{ extra.name }}
+          </label>
+        </div>
+      </div>
+
+
+      <div class="form-group"> 
+        <label>Cheese</label>
+        <div class="radio">
+          <label>
+            <input type="radio" value="No Cheese" ng-model="taco.cheese"></input> No Cheese
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" value="Normal Cheese" ng-model="taco.cheese"></input>
+            Normal Cheese
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" value="Mucho Queso" ng-model="taco.cheese"></input>
+            Mucho Queso
+          </label>
+        </div>
+      </div>
+
+
       <button class="btn btn-primary">
         Submit
       </button>
@@ -21,6 +60,13 @@
       <tbody>
         <tr ng-repeat="taco in tacos">
           <td>{{ taco.name }}</td>
+          <td>{{ taco.filling }}</td>
+          <td>
+            <span ng-repeat="extra in taco.extras">
+              {{extra}}
+            </span>
+          </td>
+          <td>{{ taco.cheese }}</td>
         </tr>
       </tbody>
     </table>

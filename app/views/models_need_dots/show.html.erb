@@ -1,0 +1,27 @@
+
+<h1>ModelsNeedDots#show</h1>
+<p>Find me in app/views/models_need_dots/show.html.erb</p>
+
+
+<div ng-app="AngulaRails" ng-controller="ModelsNeedDotsController">
+
+  <div class="row">
+
+    <div class="col-md-12">
+
+      <h1>Oh ho</h1>
+      Message is {{ someModel.message }}
+      <input type='text' ng-model="someModel.message" class="form-control">
+
+      <ul class="list-unstyled">
+        <li ng-repeat="s in stuff" style="margin-top: 10px">
+          Message is {{ someModel.message }}
+          <input type='text' ng-model="someModel.message" class="form-control">
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+</div>
+

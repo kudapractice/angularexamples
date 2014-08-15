@@ -13,6 +13,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap.min
+//= require bootstrap.min.js
 //= require angular.min
 //= require angular-application
+//= require_tree .
