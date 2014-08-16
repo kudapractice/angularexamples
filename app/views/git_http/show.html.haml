@@ -1,0 +1,26 @@
+.row{"ng-app" => "AngulaRails", "ng-controller" => "GitHttpController"}
+  .alert.alert-danger{"ng-show" => "errorMessage"}
+    %strong Error!
+
+    %i.icon-warning-sign
+
+  %h1 GitHttp
+
+  .col-md-6
+    %form{"ng-submit" => "search()"}
+      .input-group
+        %span.input-group-addon
+          %i.icon-search
+        %input.form-control{"ng-model" => "username", placeholder: "Git Username", type: "text"}/
+
+  %i.icon-refreshicon-spin{"ng-show" => "searching"}
+  %span.icon-refreshicon-spin{"ng-show" => "searching"} loading...
+
+  %div{"ng-show" => "repo_size"}
+    Number of Repos:
+    %span{"ng-show" => "repo_size"}
+
+  %ul.list-group
+    %li.list-group-item{"ng-repeat" => "repo in repos"}
+      %h4.list-group-item-heading
+      %p.list-group-item-text.text-muted

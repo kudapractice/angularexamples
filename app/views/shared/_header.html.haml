@@ -1,0 +1,34 @@
+.navbar.navbar-default.navbar-fixed-top{role: "navigation"}
+  .container
+    .navbar-header
+      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", type: "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{href: pages_path} AngularPractice::
+    .navbar-collapse.collapse
+      %ul.nav.navbar-nav
+        %li.active
+          %a{href: pages_path} Home
+        %li
+          %a{href: "#about"} About
+        %li
+          %a{href: "#contact"} Contact
+      %ul.nav.navbar-nav.navbar-right
+        /
+          <li><a href="../navbar/">Default</a></li>
+          <li><a href="../navbar-static-top/">Static top</a></li>
+          <li class="active"><a href="./">Fixed top</a></li>
+        %li.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+            Dropdown
+            %span.caret
+          %ul.dropdown-menu{role: "menu"}
+            %li.dropdown-header Nav header
+            %li
+              %a{href: "#"} Profile
+            %li.divider
+            %li
+              %a{href: "#"} Sign Out
+    / /.nav-collapse
